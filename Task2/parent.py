@@ -10,8 +10,6 @@ def create_child():
         sleep_duration = random.randint(5, 10)
         args = ['child.py', str(sleep_duration)]
         os.execvp('/usr/bin/python3', ['/usr/bin/python3'] + args)  
-        print("Error in execvp")
-        sys.exit(1)
     else:
         return child_pid
 
