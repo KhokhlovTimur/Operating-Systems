@@ -15,7 +15,7 @@ def create_child():
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Correct args: python parent.py N")
+        print("Correct args: parent.py N")
         sys.exit(1)
 
     N = int(sys.argv[1])
