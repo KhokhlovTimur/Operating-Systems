@@ -48,14 +48,12 @@ while True:
     os.write(pipe0[1], data)
     result = os.read(pipe2[0], 1024)
     arithmetic_expression = data.decode().strip()
-    results = result.decode().strip().split('\n')
+    result = result.decode().strip()
 
-    for expression, result in zip(arithmetic_expression.split('\n'), results):
-        produced_count += 1
-        sys.stdout.write(f"{expression} = {result}\n")
-        sys.stdout.flush()
-
-
+    produced_count += 1
+    sys.stdout.write(f"{arithmetic_expression} = {result}\n")
+    sys.stdout.flush()
+       
 os.close(pipe1[0])
 os.close(pipe0[1])
 os.close(pipe2[0])
