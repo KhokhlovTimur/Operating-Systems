@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import subprocess
 import os
 import signal
 import sys
@@ -15,8 +14,7 @@ if pid1 == 0:
     os.close(pipe1[0])
     os.dup2(pipe1[1], sys.stdout.fileno())  
 
-    args = ['producer']
-    os.execvp('/usr/bin/python3', ['python3'] + args)
+    os.execl('producer', 'producer')
 
 pid2 = os.fork()
 
