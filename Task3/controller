@@ -51,8 +51,8 @@ while True:
     results = result.decode().strip().split('\n')
 
     for expression, result in zip(arithmetic_expression.split('\n'), results):
-        print(f"{expression} = {result}")
         produced_count += 1
+        sys.stdout.write(f"{expression} = {result}\n")
         sys.stdout.flush()
 
 
